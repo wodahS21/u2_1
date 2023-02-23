@@ -38,12 +38,14 @@
             this.cbRectangulo = new System.Windows.Forms.CheckBox();
             this.cbRandom = new System.Windows.Forms.CheckBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnColor = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pB1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(179, 101);
+            this.btn1.Location = new System.Drawing.Point(179, 123);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(75, 23);
             this.btn1.TabIndex = 3;
@@ -137,11 +139,27 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnColor
+            // 
+            this.btnColor.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnColor.Location = new System.Drawing.Point(181, 60);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(75, 23);
+            this.btnColor.TabIndex = 14;
+            this.btnColor.UseVisualStyleBackColor = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // colorDialog1
+            // 
+            this.colorDialog1.AnyColor = true;
+            this.colorDialog1.FullOpen = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnColor);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.cbRandom);
             this.Controls.Add(this.cbRectangulo);
@@ -172,5 +190,7 @@
         private CheckBox cbRectangulo;
         private CheckBox cbRandom;
         private Button btnClear;
+        private Button btnColor;
+        private ColorDialog colorDialog1;
     }
 }

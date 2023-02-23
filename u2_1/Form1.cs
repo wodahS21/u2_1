@@ -17,19 +17,27 @@ namespace u2_1
 
         }
 
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog c = new ColorDialog();
+            if (c.ShowDialog() == DialogResult.OK) { 
+            btnColor.BackColor = c.Color;
+            }
+        }
         private void btn1_Click(object sender, EventArgs e)
         {
-          
 
+            ColorDialog p = new ColorDialog();
+            p.Color = btnColor.BackColor;
             Graphics papel = pB1.CreateGraphics();
-            Pen lapiz = new Pen(Color.Black);
-            SolidBrush brocha = new SolidBrush(Color.Black);
+            Pen lapiz = new Pen(p.Color);
+            SolidBrush brocha = new SolidBrush(p.Color);
+            
             if (cbLinea.Checked)
             {
                 if (cbRandom.Checked)
                 {
-                    Random r = new Random();
-                    int n = r.Next(5);
+
                     Random x1 = new Random();
                     int x = x1.Next(280);
                     Random y1 = new Random();
@@ -48,8 +56,6 @@ namespace u2_1
             {
                 if (cbRandom.Checked)
                 {
-                    Random r = new Random();
-                    int n = r.Next(5);
                     Random x1 = new Random();
                     int x = x1.Next(280);
                     Random y1 = new Random();
@@ -68,8 +74,6 @@ namespace u2_1
             {
                 if (cbRandom.Checked)
                 {
-                    Random r = new Random();
-                    int n = r.Next(5);
                     Random x1 = new Random();
                     int x = x1.Next(280);
                     Random y1 = new Random();
@@ -87,8 +91,6 @@ namespace u2_1
             {
                 if (cbRandom.Checked)
                 {
-                    Random r = new Random();
-                    int n = r.Next(5);
                     Random x1 = new Random();
                     int x = x1.Next(280);
                     Random y1 = new Random();
@@ -152,7 +154,9 @@ namespace u2_1
         private void btnClear_Click(object sender, EventArgs e)
         {
             pB1.Image = null;
+            btnColor.BackColor = Color.Black;
 
         }
+
     }
 }
