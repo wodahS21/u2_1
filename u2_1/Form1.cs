@@ -158,5 +158,15 @@ namespace u2_1
 
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog Guardar = new SaveFileDialog();
+            Guardar.Filter = "JPEG(*.JPG)|*.JPG|BMP(*.BMP)|*.BMP";
+            Image Imagen = pB1.BackgroundImage;
+            Guardar.ShowDialog();
+
+            Imagen.Save(Guardar.FileName);
+
+        }
     }
 }
